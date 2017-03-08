@@ -16,5 +16,37 @@
 
 
 <ion-content padding>
+  <p>Envianos tu ID/Perfil de Deezer si deseas aparecer en la lista de la app.</p>
+
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>ID Deezer Perfil (solo ID)</ion-label>
+        <ion-input type="text" name="deezerID" clearInput="true" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Correo</ion-label>
+        <ion-input type="email" name="email" clearInput="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Comentario</ion-label>
+        <ion-textarea name="comentario"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>No Soy un robot</ion-label>
+        <ion-checkbox required></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <button type="submit" ion-button block full icon-left>
+      <ion-icon name="send"></ion-icon>
+      Enviar
+    </button>
+  </form>
+
+
 
 </ion-content>
