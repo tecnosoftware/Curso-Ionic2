@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the Perfiles page.
+import { PlaylistsPage } from '../playlists/playlists';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-perfiles',
   templateUrl: 'perfiles.html'
@@ -14,6 +10,11 @@ import { NavController, NavParams } from 'ionic-angular';
 export class PerfilesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
+
+
+  goToPlaylist(userID) {
+    this.navCtrl.push(PlaylistsPage, { userID: userID });
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfilesPage');

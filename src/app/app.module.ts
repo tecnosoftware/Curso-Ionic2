@@ -7,6 +7,10 @@ import { PerfilesPage } from '../pages/perfiles/perfiles';
 import { ContactoPage } from '../pages/contacto/contacto';
 import { AcercaPage } from '../pages/acerca/acerca';
 
+import { PlaylistsPage } from '../pages/playlists/playlists';
+import { CancionesPage } from '../pages/canciones/canciones';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -14,7 +18,10 @@ import { AcercaPage } from '../pages/acerca/acerca';
     InicioPage,
     PerfilesPage,
     ContactoPage,
-    AcercaPage
+    AcercaPage,
+
+    PlaylistsPage,
+    CancionesPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -26,7 +33,10 @@ import { AcercaPage } from '../pages/acerca/acerca';
     InicioPage,
     PerfilesPage,
     ContactoPage,
-    AcercaPage
+    AcercaPage,
+
+    PlaylistsPage,
+    CancionesPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
