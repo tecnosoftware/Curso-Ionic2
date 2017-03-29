@@ -16,52 +16,19 @@
 <ion-content padding>
 
   <div class="user">
-    <img src="/assets/images/deezer-user.jpg">
-    <h1>Nombre de Usuario {{userID}}</h1>
+    <img src="{{ user.picture }}">
+    <h1>{{ user.name }}</h1>
   </div>
 
   <ion-list>
 
-    <ion-item (click)="goToCanciones(1)">
+    <ion-item (click)="goToCanciones(p)" *ngFor="let p of playlists">
       <ion-thumbnail item-left>
-        <img src="/assets/images/deezer-playlist.jpg">
+        <img src="{{ p.picture }}">
       </ion-thumbnail>
-      <h2>Titulo de playlist 1</h2>
-      <p># Canciones</p>
+      <h2>{{ p.title }}</h2>
+      <p>{{ p.nb_tracks }} Canciones</p>
     </ion-item>
-
-    <ion-item (click)="goToCanciones(2)">
-      <ion-thumbnail item-left>
-        <img src="/assets/images/deezer-playlist.jpg">
-      </ion-thumbnail>
-      <h2>Titulo de playlist 2</h2>
-      <p># Canciones</p>
-    </ion-item>
-
-    <ion-item (click)="goToCanciones(3)">
-      <ion-thumbnail item-left>
-        <img src="/assets/images/deezer-playlist.jpg">
-      </ion-thumbnail>
-      <h2>Titulo de playlist 3</h2>
-      <p># Canciones</p>
-    </ion-item>
-
-    <ion-item (click)="goToCanciones(4)">
-      <ion-thumbnail item-left>
-        <img src="/assets/images/deezer-playlist.jpg">
-      </ion-thumbnail>
-      <h2>Titulo de playlist 4</h2>
-      <p># Canciones</p>
-    </ion-item>
-
-    <ion-item (click)="goToCanciones(5)">
-      <ion-thumbnail item-left>
-        <img src="/assets/images/deezer-playlist.jpg">
-      </ion-thumbnail>
-      <h2>Titulo de playlist 5</h2>
-      <p># Canciones</p>
-    </ion-item>
-    
 
   </ion-list>
 

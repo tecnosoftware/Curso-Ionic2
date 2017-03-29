@@ -10,6 +10,7 @@ import { AcercaPage } from '../pages/acerca/acerca';
 import { PlaylistsPage } from '../pages/playlists/playlists';
 import { CancionesPage } from '../pages/canciones/canciones';
 
+import { TecnoPlayerComponent } from '../components/tecno-player/tecno-player';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { CancionesPage } from '../pages/canciones/canciones';
     AcercaPage,
 
     PlaylistsPage,
-    CancionesPage
+    CancionesPage,
+
+    TecnoPlayerComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -36,7 +39,9 @@ import { CancionesPage } from '../pages/canciones/canciones';
     AcercaPage,
 
     PlaylistsPage,
-    CancionesPage
+    CancionesPage,
+
+    TecnoPlayerComponent
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

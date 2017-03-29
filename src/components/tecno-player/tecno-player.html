@@ -1,0 +1,12 @@
+
+<ion-item>
+  <ion-thumbnail item-left>
+    <img src="{{ cover }}">
+  </ion-thumbnail>
+  <h2>{{ titulo }}</h2>
+  <p>{{ artista }} - {{ album }}</p>
+  <button ion-button clear large item-right (click)="togglePlay()" [disabled]="!ready">
+    <ion-icon *ngIf="!playing" name="play"></ion-icon>
+    <ion-icon *ngIf="playing"  name="pause"></ion-icon>
+  </button>
+</ion-item>

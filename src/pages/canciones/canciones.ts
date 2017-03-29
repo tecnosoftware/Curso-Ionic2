@@ -1,22 +1,30 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { DeezerService } from '../../providers/deezer-service';
 
 @Component({
   selector: 'page-canciones',
-  templateUrl: 'canciones.html'
+  templateUrl: 'canciones.html',
+  providers: [ DeezerService ]
 })
 export class CancionesPage {
-  public playlistID: number;
+  public playlist: any;
+  public songs: any;
+
   constructor(
-    public navCtrl: NavController, public navParams: NavParams
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public ds: DeezerService
     ) {
-      this.playlistID = this.navParams.get('playlistID')
-      console.log(this.playlistID);
+      this.playlist = this.navParams.get('playlist')
+      this.songs    = []; 
     }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CancionesPage');
+    this.ds.getPlaylistSongs(this.playlist.id).subscribe( data => {
+      this.songs = data.data;
+    })
   }
 
 }

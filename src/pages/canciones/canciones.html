@@ -19,44 +19,18 @@
 <ion-content padding>
 
   <div class="user playlist">
-    <img src="/assets/images/deezer-playlist.jpg">
-    <h1>Nombre de playlist {{ playlistID }}</h1>
+    <img src="{{ playlist.picture }}">
+    <h1>{{ playlist.title }}</h1>
   </div>
 
   <ion-list>
-
-    <ion-item>
-      <ion-thumbnail item-left>
-        <img src="/assets/images/deezer-playlist.jpg">
-      </ion-thumbnail>
-      <h2>Titulo de cancion 1</h2>
-      <p>Artista - Album</p>
-    </ion-item>
-
-    <ion-item>
-      <ion-thumbnail item-left>
-        <img src="/assets/images/deezer-playlist.jpg">
-      </ion-thumbnail>
-      <h2>Titulo de cancion 2</h2>
-      <p>Artista - Album</p>
-    </ion-item>
-
-    <ion-item>
-      <ion-thumbnail item-left>
-        <img src="/assets/images/deezer-playlist.jpg">
-      </ion-thumbnail>
-      <h2>Titulo de cancion 3</h2>
-      <p>Artista - Album</p>
-    </ion-item>
-
-    <ion-item>
-      <ion-thumbnail item-left>
-        <img src="/assets/images/deezer-playlist.jpg">
-      </ion-thumbnail>
-      <h2>Titulo de cancion 4</h2>
-      <p>Artista - Album</p>
-    </ion-item>
-
+    <tecno-player *ngFor="let s of songs"
+      [titulo]   = "s.title"
+      [artista]  = "s.artist.name"
+      [album]    = "s.album.title"
+      [cover]    = "s.album.cover"
+      [audioSrc] = "s.preview"
+    ></tecno-player>
   </ion-list>
 
 </ion-content>

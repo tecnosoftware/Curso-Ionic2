@@ -18,7 +18,7 @@
 
   <ion-list>
 
-    <ion-item (click)="goToPlaylist(user.id)" *ngFor="let user of users">
+    <ion-item (click)="goToPlaylist(user)" *ngFor="let user of users">
       <ion-avatar item-left>
         <img src="{{ user.picture }}">
       </ion-avatar>

@@ -21,8 +21,8 @@ export class PerfilesPage {
     this.users = [];
   }
 
-  goToPlaylist(userID) {
-    this.navCtrl.push(PlaylistsPage, { userID: userID });
+  goToPlaylist(user) {
+    this.navCtrl.push(PlaylistsPage, { user: user });
   }
 
   ionViewDidLoad() {
@@ -31,7 +31,6 @@ export class PerfilesPage {
       usersIDs.map( userID => {
         this.ds.getUserDetail(userID).subscribe( user => {
           this.users.push(user);
-          console.log(this.users);
         });
       });
     });

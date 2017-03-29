@@ -10,7 +10,6 @@ export class DeezerService {
   constructor(public http: Http) {
     // this.deezerAPI = "https://api.deezer.com/";
     this.deezerAPI = "/deezerAPI/";
-    
   }
 
   getUsers(){
@@ -20,6 +19,16 @@ export class DeezerService {
 
   getUserDetail(userID){
     return this.http.get(this.deezerAPI + "user/" + userID)
+      .map( res => res.json() )
+  }
+
+  getUserPlaylists(userID){
+    return this.http.get(this.deezerAPI + "user/" + userID + "/playlists")
+      .map( res => res.json() )
+  }
+
+  getPlaylistSongs(playlistID){
+    return this.http.get(this.deezerAPI + "playlist/" + playlistID + "/tracks")
       .map( res => res.json() )
   }
 
