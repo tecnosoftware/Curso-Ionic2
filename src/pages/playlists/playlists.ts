@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 
 import { CancionesPage } from '../canciones/canciones';
 
@@ -15,9 +15,10 @@ export class PlaylistsPage {
   public playlists: any;
 
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    public ds: DeezerService
+    public navCtrl:     NavController,
+    public navParams:   NavParams,
+    public ds:          DeezerService,
+    public loadingCtrl: LoadingController
     ) {
       this.user      = this.navParams.get('user');
       this.playlists = [];
@@ -28,8 +29,11 @@ export class PlaylistsPage {
   }
 
   ionViewDidLoad() {
+    let loader = this.loadingCtrl.create();
+    loader.present();
     this.ds.getUserPlaylists(this.user.id).subscribe( data => {
       this.playlists = data.data;
+      loader.dismiss();
     })
     
   }

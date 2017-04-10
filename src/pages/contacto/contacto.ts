@@ -1,22 +1,28 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 
-/*
-  Generated class for the Contacto page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-contacto',
   templateUrl: 'contacto.html'
 })
 export class ContactoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(
+    public navCtrl:   NavController,
+    public navParams: NavParams,
+    public alertCtrl: AlertController
+  ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ContactoPage');
+  }
+
+  enviar(){
+    let alert = this.alertCtrl.create({
+      title:    'Contacto',
+      subTitle: 'Su peticion ha sido enviada exitosamente!',
+      buttons:  ['OK']
+    });
+    alert.present();
   }
 
 }
