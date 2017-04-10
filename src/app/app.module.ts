@@ -1,5 +1,9 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { MyApp } from './app.component';
 
 import { InicioPage } from '../pages/inicio/inicio';
@@ -11,6 +15,8 @@ import { PlaylistsPage } from '../pages/playlists/playlists';
 import { CancionesPage } from '../pages/canciones/canciones';
 
 import { TecnoPlayerComponent } from '../components/tecno-player/tecno-player';
+
+
 
 @NgModule({
   declarations: [
@@ -43,6 +49,10 @@ import { TecnoPlayerComponent } from '../components/tecno-player/tecno-player';
 
     TecnoPlayerComponent
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    StatusBar,
+    SplashScreen,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
+  ]
 })
 export class AppModule {}
