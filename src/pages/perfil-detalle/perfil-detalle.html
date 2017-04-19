@@ -1,0 +1,47 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Perfil Detalle</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngIf="user">
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="assets/images/boy.png">
+      </ion-avatar>
+      <h2>{{ user.name }}</h2>
+      <p>{{ user.country }}</p>
+    </ion-item>
+
+    <img src="{{ user.picture_big }}">
+
+    <ion-card-content>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam impedit, odit fugit itaque alias quisquam voluptates dolores a tempora atque illum, nihil ipsam labore, odio sequi optio nulla, eveniet ea!</p>
+    </ion-card-content>
+
+    <button ion-button icon-left clear>
+      <ion-icon name="musical-notes"></ion-icon>
+      <div>{{ playlists.length }} Listas</div>
+    </button>
+    <button ion-button icon-left clear>
+      <ion-icon name="musical-note"></ion-icon>
+      <div>{{ totalCanciones }} Canciones</div>
+    </button>
+    <button ion-button icon-left clear>
+      <ion-icon name="finger-print"></ion-icon>
+      {{ user.id }}
+    </button>
+
+  </ion-card>
+</ion-content>

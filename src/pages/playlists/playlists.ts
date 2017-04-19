@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ModalController } from 'ionic-angular';
 
 import { CancionesPage } from '../canciones/canciones';
+import { PerfilDetallePage } from '../perfil-detalle/perfil-detalle';
 
 import { DeezerService } from '../../providers/deezer-service';
 
@@ -18,7 +19,8 @@ export class PlaylistsPage {
     public navCtrl:     NavController,
     public navParams:   NavParams,
     public ds:          DeezerService,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+    public modalCtrl:   ModalController
     ) {
       this.user      = this.navParams.get('user');
       this.playlists = [];
@@ -35,7 +37,15 @@ export class PlaylistsPage {
       this.playlists = data.data;
       loader.dismiss();
     })
-    
+  }
+
+  goToPerfilDetalle(user, playlists){
+    let modal = this.modalCtrl.create(PerfilDetallePage, {
+      user: user,
+      playlists: playlists
+    });
+    modal.present();
+    modal.onDidDismiss(data => console.log(data));
   }
 
 }

@@ -15,7 +15,7 @@
 
 <ion-content padding>
 
-  <div class="user">
+  <div class="user" (click)="goToPerfilDetalle(user, playlists)">
     <img src="{{ user.picture }}">
     <h1>{{ user.name }}</h1>
   </div>
