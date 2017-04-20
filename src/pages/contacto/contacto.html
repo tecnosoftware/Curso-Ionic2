@@ -16,35 +16,36 @@
 
 
 <ion-content padding>
-  <p>Envianos tu ID/Perfil de Deezer si deseas aparecer en la lista de la app.</p>
-
-  <form>
-    <ion-list>
-      <ion-item>
+  <form ion-grid fixed>
+    <p>Envianos tu ID/Perfil de Deezer si deseas aparecer en la lista de la app.</p>
+    <ion-list ion-row>
+      <ion-item ion-col col-12 col-sm-6>
         <ion-label floating>ID Deezer Perfil (solo ID)</ion-label>
-        <ion-input type="text" name="deezerID" clearInput="true" required></ion-input>
+        <ion-input type="text" name="deezerID" clearInput="true"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <ion-item  ion-col col-12 col-sm-6>
         <ion-label floating>Correo</ion-label>
         <ion-input type="email" name="email" clearInput="true"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <ion-item ion-col col-12>
         <ion-label floating>Comentario</ion-label>
         <ion-textarea name="comentario"></ion-textarea>
       </ion-item>
 
-      <ion-item>
+      <ion-item ion-col col-12>
         <ion-label>No Soy un robot</ion-label>
         <ion-checkbox required></ion-checkbox>
       </ion-item>
     </ion-list>
 
-    <button type="submit" ion-button block full icon-left (click)="enviar()">
-      <ion-icon name="send"></ion-icon>
-      Enviar
-    </button>
+    <div ion-col col-12 margin text-center>
+      <button type="submit" ion-button icon-left (click)="enviar()">
+        <ion-icon name="send"></ion-icon>
+        Enviar
+      </button>
+    </div>
   </form>
 
 

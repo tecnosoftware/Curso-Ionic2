@@ -13,7 +13,8 @@ export class DeezerService {
   }
 
   getUsers(){
-    return this.http.get('https://api.myjson.com/bins/w076v')
+    // return this.http.get('https://api.myjson.com/bins/w076v')
+    return this.http.get('assets/perfiles.json')
       .map( res => res.json() )
   }
 

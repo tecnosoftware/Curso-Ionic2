@@ -1,9 +1,4 @@
-<!--
-  Generated template for the Perfiles page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar color="primary">
     <button ion-button menuToggle>
@@ -15,16 +10,16 @@
 
 
 <ion-content padding>
-
-  <ion-list>
-
-    <ion-item (click)="goToPlaylist(user)" *ngFor="let user of users">
-      <ion-avatar item-left>
-        <img src="{{ user.picture }}">
-      </ion-avatar>
-      <h2>{{ user.name }}</h2>
-    </ion-item>
-
-  </ion-list>
+  
+  <ion-grid fixed>
+    <ion-list ion-row>
+      <ion-item ion-col col-12 col-sm-6 col-md-4 (click)="goToPlaylist(user)" *ngFor="let user of users">
+        <ion-avatar item-left>
+          <img src="{{ user.picture }}">
+        </ion-avatar>
+        <h2>{{ user.name }}</h2>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
 
 </ion-content>

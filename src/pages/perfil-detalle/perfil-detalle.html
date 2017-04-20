@@ -30,18 +30,28 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam impedit, odit fugit itaque alias quisquam voluptates dolores a tempora atque illum, nihil ipsam labore, odio sequi optio nulla, eveniet ea!</p>
     </ion-card-content>
 
-    <button ion-button icon-left clear>
-      <ion-icon name="musical-notes"></ion-icon>
-      <div>{{ playlists.length }} Listas</div>
-    </button>
-    <button ion-button icon-left clear>
-      <ion-icon name="musical-note"></ion-icon>
-      <div>{{ totalCanciones }} Canciones</div>
-    </button>
-    <button ion-button icon-left clear>
-      <ion-icon name="finger-print"></ion-icon>
-      {{ user.id }}
-    </button>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 col-sm-4 text-center>
+          <button ion-button icon-left clear>
+            <ion-icon name="musical-notes"></ion-icon>
+            <div>{{ playlists.length }} Listas</div>
+          </button>
+        </ion-col>
+        <ion-col col-6 col-sm-4 text-center>
+          <button ion-button icon-left clear>
+            <ion-icon name="musical-note"></ion-icon>
+            <div>{{ totalCanciones }} Canciones</div>
+          </button>
+        </ion-col>
+        <ion-col col-12 col-sm-4 text-center>
+          <button ion-button icon-left clear>
+            <ion-icon name="finger-print"></ion-icon>
+            {{ user.id }}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
   </ion-card>
 </ion-content>

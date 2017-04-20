@@ -23,8 +23,9 @@
     <h1>{{ playlist.title }}</h1>
   </div>
 
-  <ion-list>
+  <ion-list ion-row>
     <tecno-player *ngFor="let s of songs"
+      ion-col col-12 col-sm-6 col-md-4
       [titulo]   = "s.title"
       [artista]  = "s.artist.name"
       [album]    = "s.album.title"
