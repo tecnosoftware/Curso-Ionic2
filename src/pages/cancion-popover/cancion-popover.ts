@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, Events } from 'ionic-angular';
 
 @Component({
   selector: 'page-cancion-popover',
@@ -11,7 +11,8 @@ export class CancionPopoverPage {
   constructor(
     public navCtrl:   NavController,
     public navParams: NavParams,
-    public viewCtrl:  ViewController
+    public viewCtrl:  ViewController,
+    public events:    Events
   ) {
     this.volumen = 100;
   }
@@ -20,6 +21,7 @@ export class CancionPopoverPage {
   }
 
   onRangeChange(event){
+    this.events.publish('cambio:volumen', this.volumen);
   }
 
   close() {

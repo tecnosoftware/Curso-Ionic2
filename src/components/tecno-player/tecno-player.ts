@@ -1,23 +1,25 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Events } from 'ionic-angular';
+
 
 @Component({
   selector:    'tecno-player',
   templateUrl: 'tecno-player.html'
 })
-export class TecnoPlayerComponent implements OnInit {
+export class TecnoPlayerComponent implements OnInit, OnDestroy {
   @Input() titulo:   string;
   @Input() artista:  string;
   @Input() album:    string;
   @Input() cover:    string;
   @Input() audioSrc: string;
 
-  public audio:         any;
+  public audio:         HTMLAudioElement;
   public ready:         boolean;
   public playing:       boolean;
   public audioPos:      number;
   public audioDuration:  number;
   
-  constructor() {
+  constructor(public events: Events) {
     this.ready    = false;
     this.playing  = false;
     this.audioPos = 0;
@@ -42,6 +44,13 @@ export class TecnoPlayerComponent implements OnInit {
       this.playing  = false;
     };
 
+    this.events.subscribe('cambio:volumen', (volumen) => {
+      this.audio.volume = volumen/100;
+    });
+  }
+
+  ngOnDestroy(){
+    this.events.unsubscribe('cambio:volumen');
   }
 
   togglePlay(){
